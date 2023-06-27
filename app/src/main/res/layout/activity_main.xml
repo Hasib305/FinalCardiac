@@ -9,9 +9,7 @@
     android:background="@color/blue_shade_1"
     tools:context=".MainActivity">
 
-    <!--recycler view for our data-->
 
-    <!--progress bar for loading indicator-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/idRVUser"
@@ -27,7 +25,7 @@
         android:indeterminate="true"
         android:indeterminateDrawable="@drawable/progress_back" />
 
-    <!--floating action button-->
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/idFABAddUser"
         android:layout_width="wrap_content"
