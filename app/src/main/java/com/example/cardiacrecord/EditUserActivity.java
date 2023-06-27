@@ -188,7 +188,20 @@ public class EditUserActivity extends AppCompatActivity {
             return false;
         }
 
-     
+        if (sysPressure < 0 || sysPressure > 500) {
+            systolic.setError("Please enter a systolic pressure between 0 and 500");
+            return false;
+        }
+
+        if (diaPressure < 0 || diaPressure > 500) {
+            diastolic.setError("Please enter a diastolic pressure between 0 and 500");
+            return false;
+        }
+
+        if (heartRate < 0 || heartRate > 500) {
+            heart.setError("Please enter a heart rate between 0 and 500");
+            return false;
+        }
 
         return true;
     }
