@@ -44,6 +44,22 @@ public class MainActivityTest {
 
     @Test
     public void testAddButton() {
+        //To sign up
+        onView(withId(R.id.idTVRegister)).perform(click());
+        onView(withId(R.id.idEdtUserName)).perform(ViewActions.typeText("kazol196295@gmail.com"));
+        pressBack();
+        onView(withId(R.id.idEdtPwd)).perform(ViewActions.typeText("amardesh"));
+        pressBack();
+        onView(withId(R.id.idedtCnfPwd)).perform(ViewActions.typeText("amardesh"));
+        pressBack();
+        onView(withId(R.id.idBtnLogin)).perform(click());
+        //tO SIGN iN
+
+        onView(withId(R.id.idEdtUserName)).perform(ViewActions.typeText("kazol196295@gmail.com"));
+        pressBack();
+        onView(withId(R.id.idEdtPwd)).perform(ViewActions.typeText("amardesh"));
+        pressBack();
+        onView(withId(R.id.idBtnLogin)).perform(click());
 
         /*
         add
