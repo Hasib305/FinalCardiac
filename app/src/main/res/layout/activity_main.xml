@@ -8,15 +8,11 @@
     android:layout_height="match_parent"
     android:background="@color/blue_shade_1"
     tools:context=".MainActivity">
-
-
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/idRVUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:listitem="@layout/user_rv_item" />
-
     <ProgressBar
         android:id="@+id/idPBLoading"
         android:layout_width="wrap_content"
@@ -24,7 +20,6 @@
         android:layout_centerInParent="true"
         android:indeterminate="true"
         android:indeterminateDrawable="@drawable/progress_back" />
-
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/idFABAddUser"
@@ -43,5 +38,4 @@
         app:background="@color/blue_shade_1"
         app:backgroundTint="@color/blue_shade_2"
         app:tint="@color/white" />
-
 </RelativeLayout>
