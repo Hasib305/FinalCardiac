@@ -154,7 +154,7 @@ public class MainActivity extends AppCompatActivity implements UserRVAdapter.Use
         diostolic.setText("Diastolic : "+modal.getUserdio());
         heart.setText("HeartRate : "+modal.getUserheart());
 
-        Button editBtn = layout.findViewById(R.id.idBtnUpdate);
+        Button editBtn = layout.findViewById(R.id.idBtnU);
 
         editBtn.setOnClickListener(new View.OnClickListener() {
             @Override
