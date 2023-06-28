@@ -134,4 +134,9 @@ public class UserRVModal implements Parcelable {
         dest.writeString(userdate);
         dest.writeString(usertime);
     }
+    public int compareTo(UserRVModal measurement) {
+        return this.usertime.compareTo(measurement.getUsertime());
+    }
+
+
 }
