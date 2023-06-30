@@ -1,66 +1,67 @@
 package com.example.cardiacrecord;
 
-
-
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The MeasurementData class represents a collection of UserRVModal measurements.
+ * It provides methods to add, delete, edit, and retrieve measurements.
+ */
 public class MeasurementData {
-    List<UserRVModal> mList=new ArrayList<>();
+    private List<UserRVModal> mList = new ArrayList<>();
 
-
-    public void add(UserRVModal measure)
-    {
-        if(mList.contains(measure))
-        {
-            throw new IllegalArgumentException();
+    /**
+     * Adds a UserRVModal measurement to the collection.
+     *
+     * @param measure The UserRVModal measurement to add.
+     * @throws IllegalArgumentException if the measurement already exists in the collection.
+     */
+    public void add(UserRVModal measure) {
+        if (mList.contains(measure)) {
+            throw new IllegalArgumentException("Measurement already exists");
         }
         mList.add(measure);
     }
 
     /**
-     * This deletes a measure from the list
-     * @param measurement
-     *      This is the measure to delete
+     * Deletes a UserRVModal measurement from the collection.
+     *
+     * @param measurement The UserRVModal measurement to delete.
+     * @throws IllegalArgumentException if the measurement does not exist in the collection.
      */
-
-    public void delete(UserRVModal measurement)
-    {
-        if(mList.contains(measurement))
-        {
+    public void delete(UserRVModal measurement) {
+        if (mList.contains(measurement)) {
             mList.remove(measurement);
-        }
-        else
-        {
-            throw new IllegalArgumentException();
+        } else {
+            throw new IllegalArgumentException("Measurement does not exist");
         }
     }
 
     /**
-     * This is edits a measure in given position
-     * @param pos
-     *      the position where we will edit
-     * @param measurement
-     *      the measure which will update the values
+     * Edits a UserRVModal measurement in the collection at the specified position.
+     *
+     * @param pos         The position of the measurement to edit.
+     * @param measurement The updated UserRVModal measurement.
      */
-
-    public void edit(int pos, UserRVModal measurement)
-    {
-        mList.set(pos,measurement);
+    public void edit(int pos, UserRVModal measurement) {
+        mList.set(pos, measurement);
     }
 
     /**
-     * This returns the list
-     * @return
-     *      return the list
+     * Returns the count of measurements in the collection.
+     *
+     * @return The count of measurements.
      */
-
     public int count() {
         return mList.size();
     }
 
-    public List<UserRVModal>getMeasure()
-    {
+    /**
+     * Retrieves all the UserRVModal measurements in the collection.
+     *
+     * @return A List of UserRVModal measurements.
+     */
+    public List<UserRVModal> getMeasure() {
         return mList;
     }
 }
