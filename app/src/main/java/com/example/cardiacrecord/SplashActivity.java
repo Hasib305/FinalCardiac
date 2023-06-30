@@ -24,7 +24,7 @@ public class SplashActivity extends AppCompatActivity {
         ImageView splashImageView = findViewById(R.id.splashImageView);
         Glide.with(this)
                 .asGif()
-                .load(R.raw.hrt)
+                .load(R.raw.hr)
                 .into(splashImageView);
 
         new Handler().postDelayed(new Runnable() {
