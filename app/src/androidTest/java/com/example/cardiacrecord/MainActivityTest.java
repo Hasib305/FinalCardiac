@@ -45,6 +45,8 @@ public class MainActivityTest {
     @Test
     public void testAddButton() {
 
+
+
         onView(withId(R.id.idFABAddUser)).perform(click());
         //onView(withId(R.id.dateValue)).perform(ViewActions.typeText("12/10/2021"));
         //onView(withId(R.id.timeValue)).perform(ViewActions.typeText("10:19"));

@@ -14,18 +14,18 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.cardiacrecord.LoginActivity;
-import com.example.cardiacrecord.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+/**
+ * The RegistrationActivity class handles user registration functionality.
+ * It allows users to create a new account by providing their credentials.
+ */
 public class RegistrationActivity extends AppCompatActivity {
 
-    // creating variables for edit text and textview,
-    // firebase auth, button and progress bar.
     private TextInputEditText userNameEdt, pwdEdt, cnfPwdEdt;
     private TextView loginTV;
     private Button registerBtn;
@@ -37,7 +37,7 @@ public class RegistrationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
 
-        // initializing all our variables.
+        // Initialize variables
         userNameEdt = findViewById(R.id.idEdtUserName);
         pwdEdt = findViewById(R.id.idEdtPwd);
         loadingPB = findViewById(R.id.idPBLoading);
@@ -46,53 +46,48 @@ public class RegistrationActivity extends AppCompatActivity {
         registerBtn = findViewById(R.id.idBtnRegister);
         mAuth = FirebaseAuth.getInstance();
 
-        // adding on click for login tv.
+        // Set onClickListener for the login TextView
         loginTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // opening a login activity on clicking login text.
+                // Open LoginActivity when login TextView is clicked
                 Intent i = new Intent(RegistrationActivity.this, LoginActivity.class);
                 startActivity(i);
             }
         });
 
-        // adding click listener for register button.
+        // Set onClickListener for the register button
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // hiding our progress bar.
+                // Show the progress bar
                 loadingPB.setVisibility(View.VISIBLE);
 
-                // getting data from our edit text.
+                // Get the user's input from the text fields
                 String userName = userNameEdt.getText().toString();
                 String pwd = pwdEdt.getText().toString();
                 String cnfPwd = cnfPwdEdt.getText().toString();
 
-                // checking if the password and confirm password is equal or not.
+                // Check if the password and confirm password are equal
                 if (!pwd.equals(cnfPwd)) {
                     Toast.makeText(RegistrationActivity.this, "Please check both having same password..", Toast.LENGTH_SHORT).show();
                 } else if (TextUtils.isEmpty(userName) && TextUtils.isEmpty(pwd) && TextUtils.isEmpty(cnfPwd)) {
-
-                    // checking if the text fields are empty or not.
+                    // Check if the text fields are empty
                     Toast.makeText(RegistrationActivity.this, "Please enter your credentials..", Toast.LENGTH_SHORT).show();
                 } else {
-
-                    // on below line we are creating a new user by passing email and password.
+                    // Create a new user with email and password
                     mAuth.createUserWithEmailAndPassword(userName, pwd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
-                            // on below line we are checking if the task is success or not.
                             if (task.isSuccessful()) {
-
-                                // in on success method we are hiding our progress bar and opening a login activity.
+                                // Registration successful, hide the progress bar and open LoginActivity
                                 loadingPB.setVisibility(View.GONE);
                                 Toast.makeText(RegistrationActivity.this, "User Registered..", Toast.LENGTH_SHORT).show();
                                 Intent i = new Intent(RegistrationActivity.this, LoginActivity.class);
                                 startActivity(i);
                                 finish();
                             } else {
-
-                                // in else condition we are displaying a failure toast message.
+                                // Registration failed, hide the progress bar and display a failure toast message
                                 loadingPB.setVisibility(View.GONE);
                                 Toast.makeText(RegistrationActivity.this, "Fail to register user..", Toast.LENGTH_SHORT).show();
                             }

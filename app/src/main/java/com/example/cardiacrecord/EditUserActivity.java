@@ -22,6 +22,9 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
+/**
+ * Activity for editing or adding a user record.
+ */
 public class EditUserActivity extends AppCompatActivity {
 
     private Button updateUserBtn, deleteUserBtn;
@@ -78,6 +81,9 @@ public class EditUserActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Updates the user record in the Firebase database.
+     */
     private void updateUser() {
         loadingPB.setVisibility(View.VISIBLE);
 
@@ -122,6 +128,9 @@ public class EditUserActivity extends AppCompatActivity {
                 });
     }
 
+    /**
+     * Deletes the user record from the Firebase database.
+     */
     private void deleteUser() {
         loadingPB.setVisibility(View.VISIBLE);
 
@@ -143,6 +152,16 @@ public class EditUserActivity extends AppCompatActivity {
                 });
     }
 
+    /**
+     * Validates the user input for the user record.
+     *
+     * @param userName   The user name.
+     * @param userDesc   The user description.
+     * @param usersys    The systolic pressure value.
+     * @param userdio    The diastolic pressure value.
+     * @param userheart  The heart rate value.
+     * @return True if the input is valid, false otherwise.
+     */
     private boolean validateInput(String userName, String userDesc, String usersys, String userdio, String userheart) {
         if (userName.trim().isEmpty()) {
             userNameEdt.setError("Please enter a name");
