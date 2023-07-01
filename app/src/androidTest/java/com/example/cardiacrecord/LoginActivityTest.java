@@ -1,3 +1,6 @@
+/**
+ * This class contains UI tests for the LoginActivity.
+ */
 package com.example.cardiacrecord;
 
 import static org.junit.Assert.*;
@@ -34,23 +37,26 @@ import org.junit.runner.RunWith;
 
 import java.util.ArrayList;
 
-
 @RunWith(JUnit4.class)
 @LargeTest
-
 public class LoginActivityTest {
+
     @Rule
     public ActivityScenarioRule<LoginActivity> mainActivityActivityScenarioRule = new ActivityScenarioRule<>(LoginActivity.class);
 
+    /**
+     * Test the login process in the LoginActivity.
+     */
     @Test
     public void testLogInPage() {
 
-        //onView(withId(R.id.idTVRegister)).perform(click());
+        // Enter login credentials
         onView(withId(R.id.idEdtUserName)).perform(ViewActions.typeText("kazol196295@outlook.com"));
         pressBack();
         onView(withId(R.id.idEdtPwd)).perform(ViewActions.typeText("amardesh"));
         pressBack();
 
+        // Perform login action
         onView(withId(R.id.idBtnLogin)).perform(click());
     }
 }

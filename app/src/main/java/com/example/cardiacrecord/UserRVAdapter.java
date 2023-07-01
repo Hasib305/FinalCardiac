@@ -13,12 +13,22 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+/**
+ * The UserRVAdapter class is a RecyclerView adapter that is responsible for binding user data to the RecyclerView items.
+ */
 public class UserRVAdapter extends RecyclerView.Adapter<UserRVAdapter.ViewHolder> {
     private ArrayList<UserRVModal> userRVModalArrayList;
     private Context context;
     private UserClickInterface userClickInterface;
     int lastPos = -1;
 
+    /**
+     * Constructs a UserRVAdapter instance with the provided data.
+     *
+     * @param userRVModalArrayList The list of UserRVModal objects representing user data.
+     * @param context              The context of the adapter.
+     * @param userClickInterface   The interface to handle user item click events.
+     */
     public UserRVAdapter(ArrayList<UserRVModal> userRVModalArrayList, Context context, UserClickInterface userClickInterface) {
         this.userRVModalArrayList = userRVModalArrayList;
         this.context = context;
@@ -28,12 +38,14 @@ public class UserRVAdapter extends RecyclerView.Adapter<UserRVAdapter.ViewHolder
     @NonNull
     @Override
     public UserRVAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        // Inflate the user_rv_item layout and create a ViewHolder
         View view = LayoutInflater.from(context).inflate(R.layout.user_rv_item, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull UserRVAdapter.ViewHolder holder, int position) {
+        // Bind the data to the ViewHolder
         UserRVModal userRVModal = userRVModalArrayList.get(position);
         holder.userNameTV.setText("Name: " + userRVModal.getUserName());
         holder.heartTV.setText("Heart Rate: " + userRVModal.getUserheart() + " (bpm)");
@@ -48,6 +60,7 @@ public class UserRVAdapter extends RecyclerView.Adapter<UserRVAdapter.ViewHolder
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Handle user item click event
                 int clickedPosition = holder.getAdapterPosition();
                 if (clickedPosition != RecyclerView.NO_POSITION) {
                     userClickInterface.onUserClick(clickedPosition);
@@ -56,6 +69,12 @@ public class UserRVAdapter extends RecyclerView.Adapter<UserRVAdapter.ViewHolder
         });
     }
 
+    /**
+     * Sets an animation for the item view at the specified position.
+     *
+     * @param itemView The item view to animate.
+     * @param position The position of the item view in the RecyclerView.
+     */
     private void setAnimation(View itemView, int position) {
         if (position > lastPos) {
             Animation animation = AnimationUtils.loadAnimation(context, android.R.anim.slide_in_left);
@@ -73,6 +92,11 @@ public class UserRVAdapter extends RecyclerView.Adapter<UserRVAdapter.ViewHolder
         }
     }
 
+    /**
+     * Adds a new item to the adapter.
+     *
+     * @param item The UserRVModal object representing the new item.
+     */
     public void addItem(UserRVModal item) {
         if (userRVModalArrayList == null) {
             userRVModalArrayList = new ArrayList<>();
@@ -81,6 +105,11 @@ public class UserRVAdapter extends RecyclerView.Adapter<UserRVAdapter.ViewHolder
         notifyDataSetChanged();
     }
 
+    /**
+     * Deletes an item at the specified position from the adapter.
+     *
+     * @param position The position of the item to delete.
+     */
     public void deleteItem(int position) {
         if (userRVModalArrayList != null && position >= 0 && position < userRVModalArrayList.size()) {
             userRVModalArrayList.remove(position);
@@ -88,11 +117,15 @@ public class UserRVAdapter extends RecyclerView.Adapter<UserRVAdapter.ViewHolder
         }
     }
 
+    /**
+     * The ViewHolder class represents an item view in the RecyclerView.
+     */
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private TextView userNameTV, cmnt, systolicTV, diostolicTV, heartTV, time, date;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            // Initialize the views in the ViewHolder
             userNameTV = itemView.findViewById(R.id.cardName);
             systolicTV = itemView.findViewById(R.id.cardSystolicPressure);
             diostolicTV = itemView.findViewById(R.id.cardDiastolicPressure);
@@ -103,7 +136,15 @@ public class UserRVAdapter extends RecyclerView.Adapter<UserRVAdapter.ViewHolder
         }
     }
 
+    /**
+     * The UserClickInterface is an interface to handle user item click events in the RecyclerView.
+     */
     public interface UserClickInterface {
+        /**
+         * Called when a user item is clicked.
+         *
+         * @param position The position of the clicked item in the RecyclerView.
+         */
         void onUserClick(int position);
     }
 }

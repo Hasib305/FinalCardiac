@@ -1,3 +1,6 @@
+/**
+ * This class contains UI tests for the RegistrationActivity.
+ */
 package com.example.cardiacrecord;
 
 import static org.junit.Assert.*;
@@ -34,20 +37,20 @@ import org.junit.runner.RunWith;
 
 import java.util.ArrayList;
 
-
 @RunWith(JUnit4.class)
 @LargeTest
-
-
 public class RegistrationActivityTest {
 
     @Rule
     public ActivityScenarioRule<RegistrationActivity> mainActivityActivityScenarioRule = new ActivityScenarioRule<>(RegistrationActivity.class);
 
+    /**
+     * Test the registration process and various UI actions in the RegistrationActivity.
+     */
     @Test
     public void testRegInPage() {
 
-        //onView(withId(R.id.idTVRegister)).perform(click());
+        // Enter registration details
         onView(withId(R.id.idEdtUserName)).perform(ViewActions.typeText("kazol96295@outloo.com"));
         pressBack();
         onView(withId(R.id.idEdtPwd)).perform(ViewActions.typeText("amardesh"));
@@ -55,15 +58,15 @@ public class RegistrationActivityTest {
         onView(withId(R.id.idedtCnfPwd)).perform(ViewActions.typeText("amardesh"));
         pressBack();
         onView(withId(R.id.idBtnRegister)).perform(click());
+
         try {
             Thread.sleep(7000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
+        // Add user details
         onView(withId(R.id.idFABAddUser)).perform(click());
-        //onView(withId(R.id.dateValue)).perform(ViewActions.typeText("12/10/2021"));
-        //onView(withId(R.id.timeValue)).perform(ViewActions.typeText("10:19"));
         onView(withId(R.id.idName)).perform(ViewActions.typeText("kazol"));
         pressBack();
         onView(withId(R.id.idsPressure)).perform(ViewActions.typeText("120"));
@@ -77,7 +80,6 @@ public class RegistrationActivityTest {
 
         onView(withId(R.id.idBtnUpdate)).perform(click());
 
-
         try {
             Thread.sleep(7000);
         } catch (InterruptedException e) {
@@ -90,20 +92,22 @@ public class RegistrationActivityTest {
 
         // Perform update action
         onView(withId(R.id.idBtnU)).perform(click());
+
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
 
         onView(withId(R.id.idDPressure)).perform(ViewActions.typeText("1"));
         pressBack();
+
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
         onView(withId(R.id.idBtnUpdate)).perform(click());
 
         try {
@@ -112,22 +116,22 @@ public class RegistrationActivityTest {
             e.printStackTrace();
         }
 
-
+        // Perform another click action on the CardView at position 0
         onView(ViewMatchers.withId(R.id.idRVUser))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
 
         // Perform update action
         onView(withId(R.id.idBtnU)).perform(click());
+
         try {
             Thread.sleep(4000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+        // Modify comment and delete user
         onView(withId(R.id.idComment)).perform(ViewActions.typeText("."));
         pressBack();
         onView(withId(R.id.idBtnDelete)).perform(click());
-
     }
-
-
 }

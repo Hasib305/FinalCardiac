@@ -1,3 +1,6 @@
+/**
+ * This class contains unit tests for the MeasurementData class.
+ */
 package com.example.cardiacrecord;
 
 import static org.junit.Assert.assertEquals;
@@ -8,12 +11,22 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 public class MeasurementDataTest {
+    /**
+     * Creates a mock MeasurementData object with a single measurement.
+     *
+     * @return The mock MeasurementData object.
+     */
     private MeasurementData mockList() {
-        MeasurementData DataList = new MeasurementData();
-        DataList.add(mockMeasure());
-        return DataList;
+        MeasurementData dataList = new MeasurementData();
+        dataList.add(mockMeasure());
+        return dataList;
     }
 
+    /**
+     * Creates a mock UserRVModal object representing a measurement.
+     *
+     * @return The mock UserRVModal object.
+     */
     private UserRVModal mockMeasure() {
         return new UserRVModal(
                 "Jane Smith",
@@ -27,10 +40,13 @@ public class MeasurementDataTest {
         );
     }
 
+    /**
+     * Tests the add() method of MeasurementData.
+     */
     @Test
     public void testAdd() {
-        MeasurementData DataList = mockList();
-        assertEquals(1, DataList.getMeasure().size());
+        MeasurementData dataList = mockList();
+        assertEquals(1, dataList.getMeasure().size());
 
         UserRVModal m = new UserRVModal(
                 "Jane Smith",
@@ -42,16 +58,19 @@ public class MeasurementDataTest {
                 "2023-06-28",
                 "10:00 AM"
         );
-        DataList.add(m);
+        dataList.add(m);
 
-        assertEquals(2, DataList.getMeasure().size());
-        assertTrue(DataList.getMeasure().contains(m));
+        assertEquals(2, dataList.getMeasure().size());
+        assertTrue(dataList.getMeasure().contains(m));
     }
 
+    /**
+     * Tests the getMeasure() method of MeasurementData.
+     */
     @Test
     public void testGetMeasure() {
-        MeasurementData DataList = mockList();
-        assertEquals(0, mockMeasure().compareTo(DataList.getMeasure().get(0)));
+        MeasurementData dataList = mockList();
+        assertEquals(0, mockMeasure().compareTo(dataList.getMeasure().get(0)));
 
         UserRVModal measure = new UserRVModal(
                 "Jane Smith",
@@ -63,12 +82,15 @@ public class MeasurementDataTest {
                 "2023-06-28",
                 "10:00 AM"
         );
-        DataList.add(measure);
+        dataList.add(measure);
 
-        assertEquals(0, measure.compareTo(DataList.getMeasure().get(1)));
-        assertEquals(0, mockMeasure().compareTo(DataList.getMeasure().get(0)));
+        assertEquals(0, measure.compareTo(dataList.getMeasure().get(1)));
+        assertEquals(0, mockMeasure().compareTo(dataList.getMeasure().get(0)));
     }
 
+    /**
+     * Tests the delete() method of MeasurementData.
+     */
     @Test
     public void testDelete() {
         MeasurementData mList = mockList();
@@ -88,6 +110,9 @@ public class MeasurementDataTest {
         assertFalse(mList.getMeasure().contains(measure));
     }
 
+    /**
+     * Tests the delete() method of MeasurementData when deleting a non-existent measurement.
+     */
     @Test
     public void testDeleteException() {
         MeasurementData mList = mockList();
@@ -106,9 +131,12 @@ public class MeasurementDataTest {
         });
     }
 
+    /**
+     * Tests the edit() method of MeasurementData.
+     */
     @Test
     public void testEdit() {
-        MeasurementData DataList = mockList();
+        MeasurementData dataList = mockList();
         UserRVModal measure = new UserRVModal(
                 "Jane Smith",
                 "Test description 2",
@@ -119,8 +147,8 @@ public class MeasurementDataTest {
                 "2023-06-28",
                 "10:00 AM"
         );
-        DataList.add(measure);
-        assertTrue(DataList.getMeasure().contains(measure));
+        dataList.add(measure);
+        assertTrue(dataList.getMeasure().contains(measure));
         UserRVModal another = new UserRVModal(
                 "Jane ",
                 "Test description 5",
@@ -131,15 +159,18 @@ public class MeasurementDataTest {
                 "2023-06-28",
                 "10:00 AM"
         );
-        DataList.edit(1, another);
-        assertFalse(DataList.getMeasure().contains(measure));
-        assertTrue(DataList.getMeasure().contains(another));
+        dataList.edit(1, another);
+        assertFalse(dataList.getMeasure().contains(measure));
+        assertTrue(dataList.getMeasure().contains(another));
     }
 
+    /**
+     * Tests the count() method of MeasurementData.
+     */
     @Test
     public void testCount() {
-        MeasurementData DataList = mockList();
-        assertEquals(1, DataList.count());
+        MeasurementData dataList = mockList();
+        assertEquals(1, dataList.count());
 
         UserRVModal measure = new UserRVModal(
                 "Jane Smith",
@@ -151,8 +182,8 @@ public class MeasurementDataTest {
                 "2023-06-28",
                 "10:00 AM"
         );
-        DataList.add(measure);
+        dataList.add(measure);
 
-        assertEquals(2, DataList.count());
+        assertEquals(2, dataList.count());
     }
 }
