@@ -1,6 +1,7 @@
 package com.example.cardiacrecord;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,12 +46,37 @@ public class UserRVAdapter extends RecyclerView.Adapter<UserRVAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull UserRVAdapter.ViewHolder holder, int position) {
-        // Bind the data to the ViewHolder
+
         UserRVModal userRVModal = userRVModalArrayList.get(position);
         holder.userNameTV.setText("Name: " + userRVModal.getUserName());
-        holder.heartTV.setText("Heart Rate: " + userRVModal.getUserheart() + " (bpm)");
-        holder.diostolicTV.setText(userRVModal.getUserdio() + " mm(Hg)");
-        holder.systolicTV.setText(userRVModal.getUsersys() + " mm (Hg)");
+
+
+        int heartRate = Integer.parseInt(userRVModal.getUserheart());
+        if (heartRate < 60 || heartRate > 100) {
+            holder.heartTV.setTextColor(Color.RED);
+        } else {
+            holder.heartTV.setTextColor(Color.WHITE);
+        }
+        holder.heartTV.setText("Heart Rate: " + heartRate + " (bpm)");
+
+
+        int diastolicPressure = Integer.parseInt(userRVModal.getUserdio());
+        if (diastolicPressure < 60 || diastolicPressure > 80) {
+            holder.diostolicTV.setTextColor(Color.RED);
+        } else {
+            holder.diostolicTV.setTextColor(Color.WHITE);
+        }
+        holder.diostolicTV.setText(diastolicPressure + " mm(Hg)");
+
+
+        int systolicPressure = Integer.parseInt(userRVModal.getUsersys());
+        if (systolicPressure < 90 || systolicPressure > 120) {
+            holder.systolicTV.setTextColor(Color.RED);
+        } else {
+            holder.systolicTV.setTextColor(Color.WHITE);
+        }
+        holder.systolicTV.setText(systolicPressure + " mm (Hg)");
+
         holder.time.setText("Time: " + userRVModal.getUsertime());
         holder.date.setText("Date: " + userRVModal.getUserdate());
         holder.cmnt.setText("Comment: " + userRVModal.getUserDesc());
