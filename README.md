@@ -18,9 +18,9 @@ This app will let users to:
 * See the Date and Time of adding or updating measurement automatically
 
 
-## [*UML Diagram*](https://github.com/Hasib305/FinalCardiac/blob/master/kazolUml.png)
+## *UML Diagram*
 
-
+![UML](https://github.com/Hasib305/FinalCardiac/blob/master/kazolUml.png)
 
 
 ## *MockUp*
