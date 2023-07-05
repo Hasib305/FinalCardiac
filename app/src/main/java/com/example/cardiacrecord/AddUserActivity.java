@@ -23,8 +23,7 @@ import java.util.Locale;
 
 public class AddUserActivity extends AppCompatActivity {
 
-    // creating variables for our button, edit text,
-    // firebase database, database reference, progress bar.
+
     private Button addUserBtn;
     private TextInputEditText userNameEdt, cmnt, systolic,diostolic, heart;
     FirebaseDatabase firebaseDatabase;

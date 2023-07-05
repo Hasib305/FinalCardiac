@@ -51,7 +51,7 @@ public class RegistrationActivityTest {
     public void testRegInPage() {
 
         // Enter registration details
-        onView(withId(R.id.idEdtUserName)).perform(ViewActions.typeText("kazol9629445@outloo.com"));
+        onView(withId(R.id.idEdtUserName)).perform(ViewActions.typeText("kazol965@outloo.com"));
         pressBack();
         onView(withId(R.id.idEdtPwd)).perform(ViewActions.typeText("amardesh"));
         pressBack();
