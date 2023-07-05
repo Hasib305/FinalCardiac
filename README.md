@@ -31,10 +31,10 @@ This app will let users to:
 ![splash](https://github.com/Hasib305/FinalCardiac/blob/master/splash.png)
 
 ### Register
-![splash](https://github.com/Hasib305/FinalCardiac/blob/master/register.png)
+![splash](https://github.com/Hasib305/FinalCardiac/blob/master/1.png)
 
 ### Login
-![splash](https://github.com/Hasib305/FinalCardiac/blob/master/login.png)
+![splash](https://github.com/Hasib305/FinalCardiac/blob/master/2.png)
 
 ### ListView
 ![Listview](https://github.com/Hasib305/FinalCardiac/blob/master/listview.png)
