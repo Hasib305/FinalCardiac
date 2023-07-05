@@ -58,5 +58,11 @@ public class LoginActivityTest {
 
         // Perform login action
         onView(withId(R.id.idBtnLogin)).perform(click());
+        try {
+            Thread.sleep(4000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
     }
 }

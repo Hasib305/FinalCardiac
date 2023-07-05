@@ -61,7 +61,7 @@ public class UserRVAdapter extends RecyclerView.Adapter<UserRVAdapter.ViewHolder
 
 
         int diastolicPressure = Integer.parseInt(userRVModal.getUserdio());
-        if (diastolicPressure < 60 || diastolicPressure > 80) {
+        if (diastolicPressure < 60 || diastolicPressure > 90) {
             holder.diostolicTV.setTextColor(Color.RED);
         } else {
             holder.diostolicTV.setTextColor(Color.WHITE);
@@ -70,7 +70,7 @@ public class UserRVAdapter extends RecyclerView.Adapter<UserRVAdapter.ViewHolder
 
 
         int systolicPressure = Integer.parseInt(userRVModal.getUsersys());
-        if (systolicPressure < 90 || systolicPressure > 120) {
+        if (systolicPressure < 90 || systolicPressure > 140) {
             holder.systolicTV.setTextColor(Color.RED);
         } else {
             holder.systolicTV.setTextColor(Color.WHITE);

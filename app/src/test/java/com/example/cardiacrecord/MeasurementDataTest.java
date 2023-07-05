@@ -16,6 +16,7 @@ public class MeasurementDataTest {
      *
      * @return The mock MeasurementData object.
      */
+
     private MeasurementData mockList() {
         MeasurementData dataList = new MeasurementData();
         dataList.add(mockMeasure());
