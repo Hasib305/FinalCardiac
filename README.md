@@ -14,6 +14,7 @@ This app will let users to:
 * Add a new measurement (which always appends to the bottom end of the list)
 * Update a measurement
 * Delete a measurement
+* Give feedback to your measurement 
 * See the Date and Time of adding or updating measurement automatically
 
 
