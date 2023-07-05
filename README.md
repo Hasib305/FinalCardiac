@@ -1,58 +1,76 @@
-# CardiacRecord Android_app
-## **CardiacRecord**
-**CardiacRecord** is an app which will allow users to monitor their _Blood pressure_ & _Heart Rate_ data. Unlike other services, CardiacRecorder is free and open source.
+# CardiacRecord Android App
 
+CardiacRecord is an Android application that allows users to monitor their blood pressure and heart rate data. The app provides features for user authentication, managing measurements, and providing feedback on the recorded data.
 
-Obtaining an accurate blood pressure history is crucial for assessing the risk of heart disease and stroke. It is essential to avoid false reassurances about one's health by ensuring that blood pressure readings accurately reflect the actual condition. Relying on lower-than-actual readings may lead to a misleading perception of one's cardiovascular health, highlighting the significance of obtaining precise measurements for a comprehensive understanding of individual risk factors.
-See the [Wiki](https://github.com/Hasib305/FinalCardiac/wiki) for documentation, implementation details and history.
+## Features
 
+- **User Authentication**: Secure login and access to the app.
+- **Measurement List**: View a list of recorded measurements.
+- **Add Measurement**: Add new blood pressure and heart rate measurements.
+- **Update Measurement**: Modify existing measurements.
+- **Delete Measurement**: Remove unwanted measurements.
+- **Feedback**: Provide feedback and comments on each measurement.
+- **Date and Time**: Automatic recording of the date and time for each measurement.
 
-## *Features*
-This app will let users to:
-* Implement user authentication for secure login and access to the app. 
-* Get a list of measurements
-* Add a new measurement (which always appends to the bottom end of the list)
-* Update a measurement
-* Delete a measurement
-* Give feedback to your measurement 
-* See the Date and Time of adding or updating measurement automatically
+## UML Diagram
 
+![UML Diagram](https://github.com/Hasib305/FinalCardiac/blob/master/kazolUml.png)
 
-## *UML Diagram*
+## Mockup Screenshots
 
-![UML](https://github.com/Hasib305/FinalCardiac/blob/master/kazolUml.png)
+### Splash Screen
+![Splash Screen](https://github.com/Hasib305/FinalCardiac/blob/master/splash.png)
 
-
-## *MockUp*
-
-
-
-### Spash Screeen
-![splash](https://github.com/Hasib305/FinalCardiac/blob/master/splash.png)
-
-### Register
-![splash](https://github.com/Hasib305/FinalCardiac/blob/master/1.png)
+### Registration
+![Registration](https://github.com/Hasib305/FinalCardiac/blob/master/1.png)
 
 ### Login
-![splash](https://github.com/Hasib305/FinalCardiac/blob/master/2.png)
+![Login](https://github.com/Hasib305/FinalCardiac/blob/master/2.png)
 
-### ListView
-![Listview](https://github.com/Hasib305/FinalCardiac/blob/master/listview.png)
+### Measurement List
+![Measurement List](https://github.com/Hasib305/FinalCardiac/blob/master/listview.png)
 
-### Add New Record
+### Add New Measurement
+![Add New Measurement](https://github.com/Hasib305/FinalCardiac/blob/master/add%20data.png)
 
-![Listview](https://github.com/Hasib305/FinalCardiac/blob/master/add%20data.png)
+### Update and Delete
+![Update and Delete](https://github.com/Hasib305/FinalCardiac/blob/master/flying-iphone-12-mockup.png)
+![Update and Delete](https://github.com/Hasib305/FinalCardiac/blob/master/flying-iphone-12-mockup%20(1).png)
+
+## Getting Started
+
+These instructions will guide you on how to get a copy of the CardiacRecord app up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+- Android Studio
+- Android SDK
+- Java Development Kit (JDK)
+
+### Installation
+
+1. Clone the repository:
+
+git clone https://github.com/Hasib305/FinalCardiac.git
 
 
-### Update & Delete
-![popup](https://github.com/Hasib305/FinalCardiac/blob/master/flying-iphone-12-mockup.png)
-![EditData](https://github.com/Hasib305/FinalCardiac/blob/master/flying-iphone-12-mockup%20(1).png)
+2. Open the project in Android Studio.
+
+3. Build and run the application on an Android device or emulator.
+
+## Contributing
+
+Contributions are welcome! If you'd like to contribute to the CardiacRecord app, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Develop your code and ensure it's well-tested.
+4. Commit your changes and push the branch to your forked repository.
+5. Create a pull request to the original repository.
+
+## Authors
+
+- [Md Kawsar Ahmed Kazol](https://github.com/kazol196295) - 1907063
+- [Hasibul Hasan Hasib](https://github.com/Hasib305) - 1907089
 
 
-
-
-
-
-# Contributors
-1. [Md Kawsar Ahmed Kazol '1907063](https://github.com/kazol196295)
-2. [Hasibul Hasan Hasib '1907089](https://github.com/Hasib305)
