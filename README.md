@@ -18,33 +18,33 @@ This app will let users to:
 * See the Date and Time of adding or updating measurement automatically
 
 
-## *UML Diagram*
+## [*UML Diagram*](https://github.com/kazol196295)
 
 
 
 
 ## *MockUp*
-***
 
 
-# Spash Screeen
+
+### Spash Screeen
 ![splash](https://github.com/Hasib305/FinalCardiac/blob/master/splash.png)
 
-# Register
+### Register
 ![splash](https://github.com/Hasib305/FinalCardiac/blob/master/register.png)
 
-# Login
+### Login
 ![splash](https://github.com/Hasib305/FinalCardiac/blob/master/login.png)
 
-# ListView
+### ListView
 ![Listview](https://github.com/Hasib305/FinalCardiac/blob/master/listview.png)
 
-# Add New Record
+### Add New Record
 
 ![Listview](https://github.com/Hasib305/FinalCardiac/blob/master/add%20data.png)
 
 
-# Update & Delete
+### Update & Delete
 ![popup](https://github.com/Hasib305/FinalCardiac/blob/master/flying-iphone-12-mockup.png)
 ![EditData](https://github.com/Hasib305/FinalCardiac/blob/master/flying-iphone-12-mockup%20(1).png)
 
@@ -53,6 +53,6 @@ This app will let users to:
 
 
 
-## Contributors
+# Contributors
 1. [Md Kawsar Ahmed Kazol '1907063](https://github.com/kazol196295)
 2. [Hasibul Hasan Hasib '1907089](https://github.com/Hasib305)
