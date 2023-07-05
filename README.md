@@ -36,7 +36,7 @@ This app will let users to:
 ![splash](https://github.com/Hasib305/FinalCardiac/blob/master/login.png)
 
 # ListView
-![Listview]((https://github.com/Hasib305/FinalCardiac/blob/master/listview.png))
+![Listview](https://github.com/Hasib305/FinalCardiac/blob/master/listview.png)
 
 # Add New Record
 
