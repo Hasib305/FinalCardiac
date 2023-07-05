@@ -72,7 +72,7 @@
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!--edit text for course image link-->
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/iddPressure"
                 style="@style/textInputLayout"
@@ -98,7 +98,7 @@
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!--edit text for course link-->
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/idlll"
                 style="@style/textInputLayout"
@@ -125,7 +125,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-            <!--edit text for course description-->
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/idcc"
                 style="@style/textInputLayout"
@@ -151,7 +151,7 @@
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!--button for adding a new course-->
+
             <Button
                 android:id="@+id/idBtnAdd"
                 android:layout_width="match_parent"
