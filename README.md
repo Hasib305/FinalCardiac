@@ -37,37 +37,7 @@ CardiacRecord is an Android application that allows users to monitor their blood
 ![Update and Delete](https://github.com/Hasib305/FinalCardiac/blob/master/flying-iphone-12-mockup.png)
 ![Update and Delete](https://github.com/Hasib305/FinalCardiac/blob/master/flying-iphone-12-mockup%20(1).png)
 
-## Getting Started
-
-These instructions will guide you on how to get a copy of the CardiacRecord app up and running on your local machine for development and testing purposes.
-
-### Prerequisites
-
-- Android Studio
-- Android SDK
-- Java Development Kit (JDK)
-
-### Installation
-
-1. Clone the repository:
-
-git clone https://github.com/Hasib305/FinalCardiac.git
-
-
-2. Open the project in Android Studio.
-
-3. Build and run the application on an Android device or emulator.
-
-## Contributing
-
-Contributions are welcome! If you'd like to contribute to the CardiacRecord app, please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix.
-3. Develop your code and ensure it's well-tested.
-4. Commit your changes and push the branch to your forked repository.
-5. Create a pull request to the original repository.
-
+***
 ## Authors
 
 - [Md Kawsar Ahmed Kazol](https://github.com/kazol196295) - 1907063
