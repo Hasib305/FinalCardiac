@@ -86,7 +86,7 @@ public class RegistrationActivityTest {
             e.printStackTrace();
         }
 
-        // Perform a click action on the CardView at position 0
+     
         onView(ViewMatchers.withId(R.id.idRVUser))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
 
